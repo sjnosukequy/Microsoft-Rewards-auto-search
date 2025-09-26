@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="./tailwinds/tailwinds.js"></script>
+    <link rel="stylesheet" href="../style/style.css" />
+  </head>
+  <body class="w-50 h-80 flex items-center justify-center p-3">
+    <div class="flex flex-col gap-4">
+      <h1 class="font-bold text-xl">Rewards Farm</h1>
+      <div>
+        <p class="font-bold">Current Points</p>
+        <p id="points">0</p>
+        <a
+          href="https://rewards.bing.com/"
+          target="_blank"
+          class="hidden"
+          id="rewards-link"
+        >
+          <button class="btn btn-xs w-full btn-error mt-2">
+            Go to Rewards
+          </button>
+        </a>
+      </div>
+      <div class="w-full max-w-xs">
+        <p class="font-bold">Number of Searches</p>
+        <input
+          id="searches"
+          type="range"
+          min="1"
+          max="5"
+          value="5"
+          class="range range-primary mt-2"
+          step="1"
+        />
+        <div class="flex justify-between px-2.5 mt-2 text-xs">
+          <span>1</span>
+          <span>2</span>
+          <span>3</span>
+          <span>4</span>
+          <span>5</span>
+        </div>
+      </div>
+      <div class="flex flex-col gap-1">
+        <progress
+          class="progress progress-accent w-full"
+          value="0"
+          max="5"
+        ></progress>
+        <p class="font-bold">Currently Search</p>
+        <div class="bg-base-200 p-1 rounded-md text-center text-base-content">
+          <p id="current-search" class="overflow-hidden">...</p>
+        </div>
+      </div>
+      <button id="start-btn" class="btn btn-sm btn-soft btn-secondary w-full">
+        <span class="loading loading-spinner text-xs hidden"></span>
+        Let's Go
+      </button>
+      <script type="module" src="./popup.js"></script>
+    </div>
+  </body>
+</html>

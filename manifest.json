@@ -1,0 +1,43 @@
+{
+  "name": "Rewards Farm Extensions",
+  "description": "Base Level Extension",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "./popup/popup.html",
+    "default_icon": "icon.png"
+  },
+  "externally_connectable": {
+    "matches": [
+      "https://www.bing.com/"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.bing.com/"
+      ],
+      "js": [
+        "content-script/bing-page/bing-script.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://rewards.bing.com/"
+      ],
+      "js": [
+        "content-script/reward-page/reward-script.js"
+      ]
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "scripting",
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ]
+}

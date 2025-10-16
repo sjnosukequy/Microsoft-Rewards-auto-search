@@ -7,12 +7,25 @@
     "default_popup": "./popup/popup.html",
     "default_icon": "icon.png"
   },
+  "background": {
+    "service_worker": "service-worker/service-worker.js"
+  },
   "externally_connectable": {
     "matches": [
-      "https://www.bing.com/"
+      "https://www.bing.com/",
+      "https://rewards.bing.com/",
+      "https://isthereanydeal.com/giveaways/"
     ]
   },
   "content_scripts": [
+    {
+      "matches": [
+        "https://isthereanydeal.com/giveaways/"
+      ],
+      "js": [
+        "content-script/game-check/game-check.js"
+      ]
+    },
     {
       "matches": [
         "https://www.bing.com/"

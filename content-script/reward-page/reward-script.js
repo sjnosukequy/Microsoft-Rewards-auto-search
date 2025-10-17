@@ -189,8 +189,8 @@ class GameDealCard {
             gap: '5px',
             // width: '400px',
         });
-        div.href = this.link;
-        div.target = "_blank";
+        a.href = this.link;
+        a.target = "_blank";
         img.src = this.img;
         Object.assign(img.style, {
             width: '300px',
